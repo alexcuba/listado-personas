@@ -10,4 +10,9 @@ export class AppComponent {
   titulo = 'Listado de Personas';
   personas: Persona[] = [new Persona("Juan","Perez"), new Persona("Laura","Juarez")];
   
+
+  onAgregarPersona(persona: Persona){
+    this.personas.push(persona);
+  }
+  
 }
