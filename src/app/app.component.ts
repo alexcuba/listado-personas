@@ -13,10 +13,4 @@ export class AppComponent {
   onPersonaAgregada(persona: Persona){
     this.personas.push(persona);
   }
-  
-
-  onAgregarPersona(persona: Persona){
-    this.personas.push(persona);
-  }
-  
 }
