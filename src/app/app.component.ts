@@ -13,9 +13,13 @@ export class AppComponent {
   onPersonaAgregada(persona: Persona){
     this.personas.push(persona);
   }
+<<<<<<< HEAD
 
   clearList(persona: Persona[]){
     persona = [];
     this.personas = persona;  
   }
 }
+=======
+}
+>>>>>>> master
