@@ -8,17 +8,29 @@ import { Persona } from '../personas.model';
 })
 export class FormularioComponent implements OnInit {
   @Output() personaCreada = new EventEmitter<Persona>();
-  nombreInput:string;
-  apellidosInput:string;
+  @Output() listaPersonas = new EventEmitter<Persona[]>();
+
+  // nombreInput:string;
+  // apellidosInput:string;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onAgregarPersona(){
-    let persona1 = new Persona(this.nombreInput, this.apellidosInput);
+  onAgregarPersona(nombreInput:HTMLInputElement, apellidosInput:HTMLInputElement){
+    let persona1 = new Persona(nombreInput.value, apellidosInput.value);
     this.personaCreada.emit(persona1);     
+  }
+
+  onLimpiarCampos(nombreInput:HTMLInputElement, apellidosInput:HTMLInputElement){
+      nombreInput.value = "";
+      apellidosInput.value= "";
+  }
+
+  onRecetearLista(){
+    let EmptyPersona : Persona[] = [];
+    this.listaPersonas.emit(EmptyPersona);
   }
 
 }

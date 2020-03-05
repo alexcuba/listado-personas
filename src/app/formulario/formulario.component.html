@@ -3,19 +3,33 @@
         <label for="nombre" class="rs-only">Nombre</label>
         <input type="text" name="nombre" id="nombre" placeholder="Nombre"
         class="form-control"
-        [(ngModel)]="nombreInput">
+        #nombreInput>
     </div>
     <div class="form-group col-md-2">
         <label for="apellido" class="rs-only">Apellidos</label>
         <input type="text" name="apellido" id="apellido" placeholder="Apellido"
         class="form-control"
-        [(ngModel)]="apellidosInput">
+        #apellidosInput>
     </div>
-    <div class="col" style="margin-top: 31px;">
+    <div class="col-md-1" style="margin-top: 31px;">
         <button 
         type="submit" 
         class="btn btn-primary"
-        (click)="onAgregarPersona()"
+        (click)="onAgregarPersona(nombreInput,apellidosInput)"
         >Agregar</button>
+    </div>
+    <div class="col-md-1" style="margin-top: 31px;">
+        <button 
+        type="submit" 
+        class="btn btn-primary"
+        (click)="onLimpiarCampos(nombreInput,apellidosInput)"
+        >Limpiar</button>
+    </div>
+    <div class="col-md-2" style="margin-top: 31px;">
+        <button 
+        type="submit" 
+        class="btn btn-primary"
+        (click)="onRecetearLista()"
+        >Resetear Lista</button>
     </div>
 </form>

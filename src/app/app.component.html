@@ -4,12 +4,13 @@
   </div>
   <hr/>
   <app-formulario
-  (personaCreada)="onPersonaAgregada($event)">
+  (personaCreada)="onPersonaAgregada($event)"
+  (listaPersonas)="clearList($event)">
   </app-formulario>
   <hr/>
-  <app-persona 
+  <app-persona    
   *ngFor="let personaElemento of personas; let i = index"
    [persona] = "personaElemento"
-   [indice] = "i"
+   [indice] = "i"   
   ></app-persona>
 </div>
