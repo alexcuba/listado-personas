@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Persona } from './personas.model';
+import { PersonasServices } from './personas.services';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,14 @@ import { Persona } from './personas.model';
 })
 export class AppComponent {
   titulo = 'Listado de Personas';
-  personas: Persona[] = [new Persona("Alexander","Valdes"), new Persona("Susana","valdes")];
+  personas: Persona[] = [];
+
+  constructor(){
+
+  }
 
   onPersonaAgregada(persona: Persona){
-    this.personas.push(persona);
+      this.personas.push(persona);
   }
   
   clearList(persona: Persona[]){
