@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import { PersonaComponent } from './persona/persona.component';
 import { FormularioComponent } from './formulario/formulario.component';
-import { PersonasServices } from './personas.services';
-import { servicesLogging } from './serviceslogging';
+import { PersonasServices } from './services/personas.services';
+import { servicesLogging } from './services/serviceslogging';
 
 @NgModule({
   declarations: [

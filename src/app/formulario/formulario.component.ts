@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Persona } from '../personas.model';
-import { servicesLogging } from '../serviceslogging';
-import { PersonasServices } from '../personas.services';
+import { servicesLogging } from '../services/serviceslogging';
+import { PersonasServices } from '../services/personas.services';
 
 @Component({
   selector: 'app-formulario',
@@ -16,16 +16,14 @@ export class FormularioComponent implements OnInit {
   @ViewChild('nombreInput',{static:false}) nombreInput: ElementRef;
   @ViewChild('apellidosInput',{static:false}) apellidosInput: ElementRef;  
 
-  constructor(private serviceslogging: servicesLogging,
-              private personasservices: PersonasServices) { }
+  constructor(private serviceslogging: servicesLogging) { }
 
   ngOnInit() {
   }
 
   onAgregarPersona(){
     let persona1 = new Persona(this.nombreInput.nativeElement.value, this.apellidosInput.nativeElement.value);
-    this.serviceslogging.pringConsole("Este es el nombre: " + this.nombreInput.nativeElement.value + " " +this.apellidosInput.nativeElement.value);
-    this.personasservices.agregarPersona(persona1);
+    this.serviceslogging.pringConsole("Este es el nombre: " + this.nombreInput.nativeElement.value + " " +this.apellidosInput.nativeElement.value); 
     this.personaCreada.emit(persona1);     
   }
 
