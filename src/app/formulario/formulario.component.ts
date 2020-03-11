@@ -9,14 +9,15 @@ import { PersonasServices } from '../services/personas.services';
   styleUrls: ['./formulario.component.css'],
 })
 export class FormularioComponent implements OnInit {
-  @Output() personaCreada = new EventEmitter<Persona>();
+  // @Output() personaCreada = new EventEmitter<Persona>();
   @Output() listaPersonas = new EventEmitter<Persona[]>();
   // nombreInput:string;
   // apellidosInput:string;
   @ViewChild('nombreInput',{static:false}) nombreInput: ElementRef;
   @ViewChild('apellidosInput',{static:false}) apellidosInput: ElementRef;  
 
-  constructor(private serviceslogging: servicesLogging) { }
+  constructor(private serviceslogging: servicesLogging,
+              private personasServices: PersonasServices) { }
 
   ngOnInit() {
   }
@@ -24,7 +25,8 @@ export class FormularioComponent implements OnInit {
   onAgregarPersona(){
     let persona1 = new Persona(this.nombreInput.nativeElement.value, this.apellidosInput.nativeElement.value);
     this.serviceslogging.pringConsole("Este es el nombre: " + this.nombreInput.nativeElement.value + " " +this.apellidosInput.nativeElement.value); 
-    this.personaCreada.emit(persona1);     
+    // this.personaCreada.emit(persona1); 
+    this.personasServices.agregarPersona(persona1);
   }
 
   onLimpiarCampos(nombreInput:HTMLInputElement, apellidosInput:HTMLInputElement){

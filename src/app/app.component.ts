@@ -17,10 +17,10 @@ export class AppComponent implements OnInit{
     this.personas  = this.personasservices.personas;
   }
 
-  onPersonaAgregada(persona: Persona){
-    this.personasservices.agregarPersona(persona); 
-    // this.personas.push(persona);
-  }
+  // onPersonaAgregada(persona: Persona){
+  //   this.personasservices.agregarPersona(persona); 
+  //   this.personas.push(persona);
+  // }
   
   clearList(persona: Persona[]){
     persona = [];
