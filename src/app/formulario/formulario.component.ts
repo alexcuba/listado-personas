@@ -16,15 +16,14 @@ export class FormularioComponent implements OnInit {
   @ViewChild('nombreInput',{static:false}) nombreInput: ElementRef;
   @ViewChild('apellidosInput',{static:false}) apellidosInput: ElementRef;  
 
-  constructor(private serviceslogging: servicesLogging,
-              private personasServices: PersonasServices) { }
+  constructor(private personasServices: PersonasServices) { }
 
   ngOnInit() {
   }
 
   onAgregarPersona(){
     let persona1 = new Persona(this.nombreInput.nativeElement.value, this.apellidosInput.nativeElement.value);
-    this.serviceslogging.pringConsole("Este es el nombre: " + this.nombreInput.nativeElement.value + " " +this.apellidosInput.nativeElement.value); 
+    // this.serviceslogging.pringConsole("Este es el nombre: " + this.nombreInput.nativeElement.value + " " +this.apellidosInput.nativeElement.value); 
     // this.personaCreada.emit(persona1); 
     this.personasServices.agregarPersona(persona1);
   }

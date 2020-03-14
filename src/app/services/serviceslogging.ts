@@ -1,6 +1,6 @@
 export class servicesLogging{
 
-    pringConsole(mesaje: String){
+    pringConsole(mesaje: any){
         console.log(mesaje);
     }
 }
