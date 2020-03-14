@@ -6,4 +6,9 @@ export class PersonasServices {
     agregarPersona(persona: Persona){
         this.personas.push(persona);
     }
+
+    borrarTodasPersonas(){
+        let EmptyPersona : Persona[] = [];
+        this.personas = EmptyPersona;
+    }
 }

@@ -10,7 +10,7 @@ import { PersonasServices } from '../services/personas.services';
 })
 export class FormularioComponent implements OnInit {
   // @Output() personaCreada = new EventEmitter<Persona>();
-  @Output() listaPersonas = new EventEmitter<Persona[]>();
+  // @Output() listaPersonas = new EventEmitter<Persona[]>();
   // nombreInput:string;
   // apellidosInput:string;
   @ViewChild('nombreInput',{static:false}) nombreInput: ElementRef;
@@ -35,8 +35,9 @@ export class FormularioComponent implements OnInit {
   }
 
   onRecetearLista(){
-    let EmptyPersona : Persona[] = [];
-    this.listaPersonas.emit(EmptyPersona);
+    // let EmptyPersona : Persona[] = [];
+    this.personasServices.borrarTodasPersonas();
+    // this.listaPersonas.emit(EmptyPersona);
   }
 
 }
