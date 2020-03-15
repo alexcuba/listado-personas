@@ -16,7 +16,11 @@ export class FormularioComponent implements OnInit {
   @ViewChild('nombreInput',{static:false}) nombreInput: ElementRef;
   @ViewChild('apellidosInput',{static:false}) apellidosInput: ElementRef;  
 
-  constructor(private personasServices: PersonasServices) { }
+  constructor(private personasservices: PersonasServices) {
+              this.personasservices.saludar.subscribe(
+                (indice: number) => alert(`El indice es: ${indice}`)
+              );
+   }
 
   ngOnInit() {
   }
@@ -25,7 +29,7 @@ export class FormularioComponent implements OnInit {
     let persona1 = new Persona(this.nombreInput.nativeElement.value, this.apellidosInput.nativeElement.value);
     // this.serviceslogging.pringConsole("Este es el nombre: " + this.nombreInput.nativeElement.value + " " +this.apellidosInput.nativeElement.value); 
     // this.personaCreada.emit(persona1); 
-    this.personasServices.agregarPersona(persona1);
+    this.personasservices.agregarPersona(persona1);
   }
 
   onLimpiarCampos(nombreInput:HTMLInputElement, apellidosInput:HTMLInputElement){
@@ -35,7 +39,7 @@ export class FormularioComponent implements OnInit {
 
   onRecetearLista(){
     // let EmptyPersona : Persona[] = [];
-    this.personasServices.borrarTodasPersonas();
+    this.personasservices.borrarTodasPersonas();
     // this.listaPersonas.emit(EmptyPersona);
   }
 

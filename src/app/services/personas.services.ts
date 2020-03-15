@@ -1,10 +1,12 @@
 import { Persona } from '../personas.model';
 import { servicesLogging } from '../services/serviceslogging';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, OnInit } from '@angular/core';
 
 @Injectable()
 export class PersonasServices {
     personas: Persona[] = [new Persona("Alexander","Valdes"), new Persona("Susana","valdes")];
+
+    saludar = new EventEmitter<number>();
 
     constructor(private servicelogging: servicesLogging){}
 

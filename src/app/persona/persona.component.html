@@ -1,7 +1,13 @@
 <div class="row">
   <div class="col-xs-12">
-    <div>
-      {{indice+1}}:{{personas.nombre}} {{personas.apellidos}}
-    </div>
+      <div id="edit-button">
+        {{indice+1}}:{{personas.nombre}} {{personas.apellidos}}
+        <button 
+          type="submit"
+          class="btn btn-primary"
+          (click)="emitirSaludo()"
+          >Editar
+        </button>
+      </div>
   </div>
 </div>
