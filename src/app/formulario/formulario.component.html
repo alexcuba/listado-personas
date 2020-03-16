@@ -1,26 +1,18 @@
-<form class="form-row">
-    <div class="form-group col-md-2">
-        <label for="nombre" class="rs-only">Nombre</label>
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre"
-        class="form-control"
-        #nombreInput>
-    </div>
-    <div class="form-group col-md-2">
-        <label for="apellido" class="rs-only">Apellidos</label>
-        <input type="text" name="apellido" id="apellido" placeholder="Apellido"
-        class="form-control"
-        #apellidosInput>
-    </div>
+<form class="item">
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre"
+    class="form-control"[(ngModel)]="nombreInput">
+
+    <input type="text" name="apellido" id="apellido" placeholder="Apellido"
+    class="form-control" [(ngModel)]="apellidosInput">
+
   
 <!--     ACTIONS BUTTONS -->
-    <div class="col-md-1" style="margin-top: 31px;">
         <button 
-        type="submit" 
-        class="btn btn-primary"
+        type="submit"        
         (click)="onAgregarPersona()"
-        >Agregar</button>
-    </div>
-    <div class="col-md-1" style="margin-top: 31px;">
+        >+</button>
+
+    <!-- <div class="col-md-1" style="margin-top: 31px;">
         <button 
         type="submit" 
         class="btn btn-primary"
@@ -33,5 +25,5 @@
         class="btn btn-primary"
         (click)="onRecetearLista()"
         >Resetear Lista</button>
-    </div>
+    </div> -->
 </form>

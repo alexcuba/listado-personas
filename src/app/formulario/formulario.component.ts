@@ -11,10 +11,10 @@ import { PersonasServices } from '../services/personas.services';
 export class FormularioComponent implements OnInit {
   // @Output() personaCreada = new EventEmitter<Persona>();
   // @Output() listaPersonas = new EventEmitter<Persona[]>();
-  // nombreInput:string;
-  // apellidosInput:string;
-  @ViewChild('nombreInput',{static:false}) nombreInput: ElementRef;
-  @ViewChild('apellidosInput',{static:false}) apellidosInput: ElementRef;  
+  nombreInput:string;
+  apellidosInput:string;
+  // @ViewChild('nombreInput',{static:false}) nombreInput: ElementRef;
+  // @ViewChild('apellidosInput',{static:false}) apellidosInput: ElementRef;  
 
   constructor(private personasservices: PersonasServices) {
               this.personasservices.saludar.subscribe(
@@ -26,10 +26,12 @@ export class FormularioComponent implements OnInit {
   }
 
   onAgregarPersona(){
-    let persona1 = new Persona(this.nombreInput.nativeElement.value, this.apellidosInput.nativeElement.value);
+    let persona1 = new Persona(this.nombreInput, this.apellidosInput);
     // this.serviceslogging.pringConsole("Este es el nombre: " + this.nombreInput.nativeElement.value + " " +this.apellidosInput.nativeElement.value); 
     // this.personaCreada.emit(persona1); 
     this.personasservices.agregarPersona(persona1);
+    this.nombreInput = "";
+    this.apellidosInput = "";
   }
 
   onLimpiarCampos(nombreInput:HTMLInputElement, apellidosInput:HTMLInputElement){

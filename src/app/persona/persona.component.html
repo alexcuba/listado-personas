@@ -1,13 +1,4 @@
-<div class="row">
-  <div class="col-xs-12">
-      <div id="edit-button">
-        {{indice+1}}:{{personas.nombre}} {{personas.apellidos}}
-        <button 
-          type="submit"
-          class="btn btn-primary"
-          (click)="emitirSaludo()"
-          >Editar
-        </button>
-      </div>
-  </div>
+<div class="item">  
+  <input type="checkbox" (click)="emitirSaludo()">
+  <p>{{indice+1}}:{{personas.nombre}} {{personas.apellidos}}</p>
 </div>
