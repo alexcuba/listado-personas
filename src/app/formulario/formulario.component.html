@@ -1,15 +1,28 @@
-<form class="item">
-    <input type="text" name="nombre" id="nombre" placeholder="Nombre"
-    class="form-control"[(ngModel)]="nombreInput">
+<form class="item" (ngSubmit)="f.form.valid && onAgregarPersona() " #f="ngForm">
+    <input 
+    type="text" 
+    name="nombre" 
+    id="nombre" 
+    placeholder="Nombre"
+    class="form-control"
+    [(ngModel)]="nombreInput"
+    required
+    >
 
-    <input type="text" name="apellido" id="apellido" placeholder="Apellido"
-    class="form-control" [(ngModel)]="apellidosInput">
+    <input 
+    type="text" 
+    name="apellido" 
+    id="apellido" 
+    placeholder="Apellido"
+    class="form-control" 
+    [(ngModel)]="apellidosInput"
+    required
+    >
 
   
 <!--     ACTIONS BUTTONS -->
         <button 
-        type="submit"        
-        (click)="onAgregarPersona()"
+        type="submit"
         >+</button>
 
     <!-- <div class="col-md-1" style="margin-top: 31px;">
