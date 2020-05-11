@@ -1,1 +1,11 @@
-<p>personas works!</p>
+<div class="box">
+  <app-persona 
+  *ngFor="let personaElemento of personas; let i = index" 
+  [personas]="personaElemento" 
+  [indice]="i">
+  </app-persona>
+</div>
+
+<div class="box">
+  <app-formulario></app-formulario>
+</div>

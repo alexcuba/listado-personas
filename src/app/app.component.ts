@@ -9,12 +9,10 @@ import { PersonasServices } from './services/personas.services';
 })
 export class AppComponent implements OnInit{
   titulo = 'Listado de Personas';
-  personas: Persona[] = [];
 
-  constructor(private personasservices: PersonasServices){}
+  constructor(){}
 
   ngOnInit(): void {
-    this.personas  = this.personasservices.personas;
   }
 
   // onPersonaAgregada(persona: Persona){
@@ -22,8 +20,8 @@ export class AppComponent implements OnInit{
   //   this.personas.push(persona);
   // }
   
-  clearList(persona: Persona[]){
-    persona = [];
-    this.personas = persona;  
-  }
+  // clearList(persona: Persona[]){
+  //   persona = [];
+  //   this.personas = persona;  
+  // }
 }
