@@ -1,41 +1,7 @@
 <form class="box" (ngSubmit)="f.form.valid && onAgregarPersona() " #f="ngForm">
-    <input 
-    type="text" 
-    name="nombre" 
-    id="nombre" 
-    placeholder="Nombre"
-    class="form-control"
-    [(ngModel)]="nombreInput"
-    required
-    >
-    <input 
-    type="text" 
-    name="apellido" 
-    id="apellido" 
-    placeholder="Apellido"
-    class="form-control" 
-    [(ngModel)]="apellidosInput"
-    required
-    >
-
-  
-<!--     ACTIONS BUTTONS -->
-        <button 
-        type="submit"
-        >+</button>
-
-    <!-- <div class="col-md-1" style="margin-top: 31px;">
-        <button 
-        type="submit" 
-        class="btn btn-primary"
-        (click)="onLimpiarCampos(nombreInput,apellidosInput)"
-        >Limpiar</button>
-    </div>
-    <div class="col-md-2" style="margin-top: 31px;">
-        <button 
-        type="submit" 
-        class="btn btn-primary"
-        (click)="onRecetearLista()"
-        >Resetear Lista</button>
-    </div> -->
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre"
+    class="form-control"[(ngModel)]="nombreInput" required>
+    <input type="text" name="apellido" id="apellido" placeholder="Apellido" 
+    class="form-control" [(ngModel)]="apellidosInput">
+    <button type="submit">+</button>
 </form>
